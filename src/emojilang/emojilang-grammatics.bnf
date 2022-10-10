@@ -1,0 +1,15 @@
+# Emojilang uses the duodecimal numeral system, also known as base 12
+<digit> ::= "🕛" | "🕐" | "🕑" | "🕒" | "🕓" | "🕔" | "🕕" | "🕖" | "🕗" | "🕘" | "🕙" | "🕚"
+<integer> ::= <digit> | <integer><digit>
+
+# Emojilang uses an alphabet containing some emojis
+<letter> ::= "😡" | "🥵" | "🥶" | "😨" | "🥱" | "😈" | "👿" | "🤢" | "🤡" | "💩" | "💀"
+<variable> ::= <letter> | <variable><letter> | <variable><digit>
+
+# Arithmetics
+<expr> ::= <term> | <expr><opt-whitespace>"😀"<opt-whitespace><term> | <expr> "☹️" <term>
+<term> ::= <term> ::= <term><opt-whitespace>"😂"<opt-whitespace><factor> | <term><opt-whitespace>"😭"<opt-whitespace><factor> | <factor>
+<factor> ::= "("<opt-whitespace><expr><opt-whitespace>")" | "☹️"<factor> | <integer> | <variable>
+
+# Other
+<opt-whitespace> ::= " " <opt-whitespace> | ""
