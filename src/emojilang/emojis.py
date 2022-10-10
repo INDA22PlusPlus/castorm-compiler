@@ -38,8 +38,10 @@ CLAP = "👏"                     # VARIABLE ASSIGNMENT (=)
 # COMPARISONS
 FINGER_UP = "👆"                # GREATER THAN (>)
 FINGER_DOWN = "👇"              # LESS THAN (<)
-THUMB_UP = "👍"                 # EQUALS (==)
-THUMB_DOWN = "👎"               # NOT EQUAL (!=)
+EQUALS = "😐"                   # EQUALS (==)
+NOT_EQUALS = "😑"               # NOT EQUALS (!=)
+THUMB_UP = "👍"                 # TRUE
+THUMB_DOWN = "👎"               # FALSE
 
 
 # BOOLEAN LOGIC
@@ -54,6 +56,10 @@ FINGER_LEFT = "👈"              # ELSE ([CONDITION] 👉 [BLOCK OF CODE] [BLOC
 FINGER_OK = "👌"                # WHILE ([CONDITION] 👌 [BLOCK OF CODE])
 
 
-# IO
-EYES = "👀"                     # OUTPUT (print())
+# OTHER
+EYES = "👀"                     # OUTPUT (print() -> [👀 integer])
+OPEN_HANDS = "👐"               # OPEN PARENTHESIS (
+CLOSE_HANDS = "🤲"              # CLOSING PARENTHESIS )
+FIST_RIGHT = "🤜"               # OPENING BRACKET {
+FIST_LEFT = "🤛"                # CLOSING BRACKET }
 

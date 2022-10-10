@@ -7,9 +7,21 @@
 <variable> ::= <letter> | <variable><letter> | <variable><digit>
 
 # Arithmetics
-<expr> ::= <term> | <expr><opt-whitespace>"😀"<opt-whitespace><term> | <expr> "☹️" <term>
-<term> ::= <term> ::= <term><opt-whitespace>"😂"<opt-whitespace><factor> | <term><opt-whitespace>"😭"<opt-whitespace><factor> | <factor>
-<factor> ::= "("<opt-whitespace><expr><opt-whitespace>")" | "☹️"<factor> | <integer> | <variable>
+<expr> ::= <term> | <expr>"😀"<term> | <expr> "☹️" <term>
+<term> ::= <term>"😂"<factor> | <term>"😭"<factor> | <factor>
+<factor> ::= "👐"<expr>"🤲" | "☹️"<factor> | <integer> | <variable>
+
+# LOGIC
+<type> ::= <integer> | <bool>
+<comparison> ::= "👆" | "👇" | "😐" | "😑"
+<bool> ::= "👍" | "👎"
+<condition> ::= <bool-term> | <condition> "✌️" <bool-term>
+<bool-term> ::= <bool-term> "🤞" <bool-factor> | <bool-factor>
+<bool-factor> ::= "👐"<bool-factor>"🤲" | "❌" <-bool-factor> | <bool> | <integer> <comparison> <integer> |
 
 # Other
-<opt-whitespace> ::= " " <opt-whitespace> | ""
+<code-block> ::= "🤜" <squence> "🤛"
+<squence> ::= <statement> | <squence> <statement>
+<statement> ::= <variable> "👏" <integer> | <condition> "👉" <code-block> | 
+                <condition> "👉" <code-block> <code-block> "👈" | "👌" <code-block> |
+                "👀" <integer>
