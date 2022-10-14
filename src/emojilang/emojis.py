@@ -40,6 +40,8 @@ FINGER_UP = "👆"                # GREATER THAN (>)
 FINGER_DOWN = "👇"              # LESS THAN (<)
 EQUALS = "😐"                   # EQUALS (==)
 NOT_EQUALS = "😑"               # NOT EQUALS (!=)
+
+# BOOLEANS
 THUMB_UP = "👍"                 # TRUE
 THUMB_DOWN = "👎"               # FALSE
 
@@ -62,4 +64,6 @@ OPEN_HANDS = "👐"               # OPEN PARENTHESIS (
 CLOSE_HANDS = "🤲"              # CLOSING PARENTHESIS )
 FIST_RIGHT = "🤜"               # OPENING BRACKET {
 FIST_LEFT = "🤛"                # CLOSING BRACKET }
+
+
 
