@@ -210,16 +210,6 @@ class Compiler:
     def run(self) -> None:
         exec(self.compile())
 
-def main():
-    x = ""
-    data = f"{A}{B}{ASSIGNMENT}{SEVEN}{SUBTRACTION}{FIVE}{NEWLINE}{OUTPUT}{LP}{A}{B}{RP}{NEWLINE}{LOOP}{LP}{A}{B}{LT}{SEVEN}{SEVEN}{RP}{LB}{A}{B}{ASSIGNMENT}{A}{B}{ADDITION}{ONE}{NEWLINE}{OUTPUT}{LP}{A}{B}{RP}{NEWLINE}{RB}"
-
-    
-    compiler = Compiler(data)
-    print(data)
-    program = compiler.compile()
-    print(program)
-    exec(program)
 
 import os
 import sys
