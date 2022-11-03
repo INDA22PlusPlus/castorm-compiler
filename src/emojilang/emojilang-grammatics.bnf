@@ -7,9 +7,8 @@
 <variable> ::= <letter> | <variable><letter> | <variable><digit>
 
 # Arithmetics
-<expr> ::= <term> | <expr><opt-whitespace>"😀"<opt-whitespace><term> | <expr> "☹️" <term>
-<term> ::= <term> ::= <term><opt-whitespace>"😂"<opt-whitespace><factor> | <term><opt-whitespace>"😭"<opt-whitespace><factor> | <factor>
-<factor> ::= "("<opt-whitespace><expr><opt-whitespace>")" | "☹️"<factor> | <integer> | <variable>
+<expr> ::= <term> | <expr>"😀"<term> | <expr> "☹️" <term>
+<term> ::= <term>"😂"<factor> | <term>"😭"<factor> | <factor>
+<factor> ::= "("<expr>")" | "☹️"<factor> | <integer> | <variable>
 
 # Other
-<opt-whitespace> ::= " " <opt-whitespace> | ""

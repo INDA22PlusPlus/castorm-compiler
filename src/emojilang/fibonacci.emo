@@ -1,0 +1,23 @@
+first we ask the user for the initial fibonacci numbers
+
+😡 👏 👂🚩 // let A = input();
+🥵 👏 👂🚩 // let B = input();
+
+we then ask the user for how many numbers to be displayed
+
+🥶 👏 👂🚩 // let C = input();
+
+then we create a counter variable and initialize it to 0
+
+😨 👏 🕛🚩 // let D = 0;
+
+then we make the loop
+
+👌 🤛😨👇🥶🤜           // while (D < C)
+👐                         
+    👄🤛😡🙂🥵🤜🚩      // print(A + B);
+    🥱 👏 😡🙂🥵🚩      // let temp = A + B;
+    😡 👏 🥵🚩           // A = B;
+    🥵 👏 🥱🚩           // B = temp;
+    😨 👏 😨🙂🕐🚩      // D = D + 1;
+🙌                                     
