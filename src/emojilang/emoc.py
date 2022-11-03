@@ -6,14 +6,15 @@ INDENT = "    "
 class Compiler:
     def __init__(self, data) -> None:
         self.original_data = data
-        self.data = list(filter(lambda x: x in DEFINITIONS, data))
+        self.data = list(data)
         self.pointer = 0
+        self.lines = 0
         self.count = len(self.data)
         self.result = ""
         self.indent_level = 0
 
     def throw(self, expected, found):
-        raise SyntaxError(f"Expected Symbol: {expected}. Found: {found}. At: {self.pointer}: Program:\n {self.result}")
+        raise SyntaxError(f"Expected Symbol: {expected}, Found: {found}. At line: {self.lines + 1}")
 
     def pad(self):
         for i in range(self.indent_level):
@@ -25,7 +26,16 @@ class Compiler:
     def current_symbol(self) -> str:
         if self.EOF():
             return None
-        return self.data[self.pointer]
+        curr = self.data[self.pointer]
+        while curr not in DEFINITIONS:
+            self.pointer += 1
+            if self.EOF():
+                return None
+            curr = self.data[self.pointer]
+            if curr == "\n":
+                self.lines += 1
+            
+        return curr
 
     def EOF(self) -> bool:
         return self.pointer >= self.count
@@ -49,6 +59,8 @@ class Compiler:
             self.expect_flow_control()
         elif curr == OUTPUT:
             self.expect_output()
+        elif curr == None:
+            return
         else:
             self.throw("statement", curr)
     def expect_assignment(self) -> None:
@@ -158,6 +170,8 @@ class Compiler:
         while curr != RB:
             self.expect_statement()
             curr = self.current_symbol()
+            if curr == None and self.EOF():
+                raise EOFError()
         self.expect_symbol(RB)
     def expect_if(self) -> None:
         self.expect_symbol(IF)
@@ -217,4 +231,15 @@ import codecs
 
 with codecs.open(os.path.join(sys.path[0], sys.argv[1]), encoding="utf-8") as f:
     compiler = Compiler("".join(f.readlines()))
-    compiler.run()
+    try:
+        compiler.compile()
+        print(compiler.result)
+    except SyntaxError as err:
+        print("Compile Error: " + err.msg)
+    except EOFError as err:
+        print("Compile Error: Unexpected End Of File!")
+    else:
+        try:
+            exec(compiler.result)
+        except Exception as ex:
+            print("Runtime Error")
