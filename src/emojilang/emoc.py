@@ -238,6 +238,8 @@ with codecs.open(os.path.join(sys.path[0], sys.argv[1]), encoding="utf-8") as f:
         print("Compile Error: " + err.msg)
     except EOFError as err:
         print("Compile Error: Unexpected End Of File!")
+    except Exception:
+        print("Compile Error: Unknown Compile Error")
     else:
         try:
             exec(compiler.result)
