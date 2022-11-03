@@ -218,4 +218,3 @@ import codecs
 with codecs.open(os.path.join(sys.path[0], sys.argv[1]), encoding="utf-8") as f:
     compiler = Compiler("".join(f.readlines()))
     compiler.run()
-    
