@@ -9,25 +9,6 @@
 # Arithmetics
 <expr> ::= <term> | <expr>"😀"<term> | <expr> "☹️" <term>
 <term> ::= <term>"😂"<factor> | <term>"😭"<factor> | <factor>
-<<<<<<< HEAD
 <factor> ::= "("<expr>")" | "☹️"<factor> | <integer> | <variable>
 
 # Other
-=======
-<factor> ::= "👐"<expr>"🤲" | "☹️"<factor> | <integer> | <variable>
-
-# LOGIC
-<type> ::= <integer> | <bool>
-<comparison> ::= "👆" | "👇" | "😐" | "😑"
-<bool> ::= "👍" | "👎"
-<condition> ::= <bool-term> | <condition> "✌️" <bool-term>
-<bool-term> ::= <bool-term> "🤞" <bool-factor> | <bool-factor>
-<bool-factor> ::= "👐"<bool-factor>"🤲" | "❌" <-bool-factor> | <bool> | <integer> <comparison> <integer> |
-
-# Other
-<code-block> ::= "🤜" <squence> "🤛"
-<squence> ::= <statement> | <squence> <statement>
-<statement> ::= <variable> "👏" <integer> | <condition> "👉" <code-block> | 
-                <condition> "👉" <code-block> <code-block> "👈" | "👌" <code-block> |
-                "👀" <integer>
->>>>>>> c2cee089496e2ad8d51cbcc25b968e4c5b7f133a
